@@ -8,7 +8,7 @@ libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
 libncursesw5-dev xz-utils tk-dev unzip mcl libgtk2.0-dev r-base-core     \
 libcurl4-gnutls-dev python-rpy2 git
 
-RUN && apt-get -y install git \
+RUN apt-get -y install git \
 	&& git config --global user.name "rehamFatima"	\
     && git config --global user.email "reham@ebi.ac.uk"	\
     
