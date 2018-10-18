@@ -13,7 +13,7 @@ RUN && apt-get -y install git \
     && git config --global user.email "reham@ebi.ac.uk"	\
     
     && cd lib	\
-	&& git clone https://github.com/gt1/libmaus2.git 	
+	&& git clone https://github.com/gt1/libmaus2.git \	
     && cd libmaus2  \
 	&& sudo apt-get -y install libtool m4 automake \
 	&& libtoolize  \
