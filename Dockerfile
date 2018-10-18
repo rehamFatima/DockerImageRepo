@@ -9,31 +9,27 @@ libncursesw5-dev xz-utils tk-dev unzip mcl libgtk2.0-dev r-base-core     \
 libcurl4-gnutls-dev python-rpy2 git
 
 RUN apt-get -y install git \
-	&& git config --global user.name "rehamFatima"	\
+    && git config --global user.name "rehamFatima"	\
     && git config --global user.email "reham@ebi.ac.uk"	\
     
     && cd lib	\
-	&& git clone https://github.com/gt1/libmaus2.git \	
+    && git clone https://github.com/gt1/libmaus2.git \	
     && cd libmaus2  \
-	&& sudo apt-get -y install libtool m4 automake \
-	&& libtoolize  \
+    && sudo apt-get -y install libtool m4 automake \
+    && libtoolize  \
     && aclocal 	\
     && autoheader 	\
-	&& automake --force-missing --add-missing 	\
-	&& autoconf \
-	&& ./configure --prefix=/Mug/lib/libmaus2 	\
+    && automake --force-missing --add-missing 	\
+    && autoconf \
+    && ./configure --prefix=/Mug/lib/libmaus2 	\
 	
-	&& make  \
+    && make  \
     && make install \
-	&& cd /Mug/lib 	\
+    && cd /Mug/lib 	\
 	
-	
-	&& git clone https://github.com/gt1/biobambam2.git 	&& cd biobambam2 	\
-	&& autoreconf -i -f	&& ./configure --with-libmaus2=/Mug/lib/libmaus2 --prefix=/Mug/lib/biobambam2	\
+    && git clone https://github.com/gt1/biobambam2.git 	&& cd biobambam2 	\
+    && autoreconf -i -f	&& ./configure --with-libmaus2=/Mug/lib/libmaus2 --prefix=/Mug/lib/biobambam2	\
     && make install
-	
-	#&& make	 && make install
-	
 	
 #RUN mkdir Biobambam
 #RUN cd Biobambam
